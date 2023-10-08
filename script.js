@@ -1,4 +1,6 @@
-const blockIdInput = document.getElementById('block_id');
+document.addEventListener("DOMContentLoaded", function () {
+  // Your code here
+	const blockIdInput = document.getElementById('block_id');
 const colorIdInput = document.getElementById('colour_id');
 
 if (blockIdInput && colorIdInput) {
@@ -6,3 +8,6 @@ if (blockIdInput && colorIdInput) {
 } else {
   console.error('One or both inputs are missing.');
 }
+
+	
+});
