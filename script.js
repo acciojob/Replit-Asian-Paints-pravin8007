@@ -1,10 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-      const gridContainer = document.getElementById('grid-container');
+      const gridContainer = document.getElementsbyClassName('grid-container');
       const blockIdInput = document.getElementById('block_id');
       const colorInput = document.getElementById('colour_id');
       const changeButton = document.getElementById('change_button');
       const resetButton = document.getElementById('reset_button');
 
+	  function resetGridColors() {
+        const gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach(item => {
+          item.style.backgroundColor = 'transparent';
+        });
+      }
       changeButton.addEventListener('click', function () {
         const blockId = blockIdInput.value;
         const color = colorInput.value;
@@ -26,10 +32,5 @@ document.addEventListener('DOMContentLoaded', function () {
         resetGridColors();
       });
 
-      function resetGridColors() {
-        const gridItems = document.querySelectorAll('.grid-item');
-        gridItems.forEach(item => {
-          item.style.backgroundColor = 'transparent';
-        });
-      }
+    
     });
