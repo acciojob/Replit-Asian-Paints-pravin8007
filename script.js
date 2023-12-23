@@ -1,36 +1,19 @@
-document.addEventListener('DOMContentLoaded', function () {
-      const gridContainer = document.getElementsbyClassName('grid-container');
-      const blockIdInput = document.getElementById('block_id');
-      const colorInput = document.getElementById('colour_id');
-      const changeButton = document.getElementById('change_button');
-      const resetButton = document.getElementById('reset_button');
+ function changeColor() {
+    const blockId = document.getElementById('block_id').value;
+    const color = document.getElementById('color_id').value;
+    resetColors();
+    const block = document.getElementById(blockId);
+    if (block) {
+      block.style.backgroundColor = color;
+    }
+  }
 
-	  function resetGridColors() {
-        const gridItems = document.querySelectorAll('.grid-item');
-        gridItems.forEach(item => {
-          item.style.backgroundColor = 'transparent';
-        });
-      }
-      changeButton.addEventListener('click', function () {
-        const blockId = blockIdInput.value;
-        const color = colorInput.value;
-
-        if (blockId && color) {
-          const gridItem = document.getElementById(blockId);
-          if (gridItem) {
-            // Set background color of the specified grid item
-            gridItem.style.backgroundColor = color;
-
-            // Reset background color of all grid items after changing one
-            resetGridColors();
-          }
-        }
-      });
-
-      resetButton.addEventListener('click', function () {
-        // Reset background color of all grid items
-        resetGridColors();
-      });
-
-    
-    });
+  function resetColors() {
+    const gridItems = document.getElementsByClassName('grid-item');
+	  // const id =  document.getElementById('block_id');
+	  // id.value = "";
+	  
+    for (const item of gridItems) {
+      item.style.backgroundColor = 'transparent';
+    }
+  }
